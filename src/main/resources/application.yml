@@ -1,24 +1,15 @@
-# Spring Datasource Settings
+#数据库
 spring:
   datasource:
-    name: druidDataSource
-    type: com.alibaba.druid.pool.DruidDataSource
-    druid:
-      driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/order?useUnicode=true&characterEncoding=UTF-8
-      username: root
-      password: root
-      filters: stat
-      max-active: 100
-      initial-size: 1
-      max-wait: 60000
-      min-idle: 1
-      time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 300000
-      validation-query: select 'x'
-      test-while-idle: true
-      test-on-borrow: false
-      test-on-return: false
-      pool-prepared-statements: true
-      max-open-prepared-statements: 50
-      max-pool-prepared-statement-per-connection-size: 20
+    url: jdbc:mysql://localhost:3306/order?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      pool-name: KevinHikariPool
+      maximum-pool-size: 100
+      connection-timeout: 60000
+      minimum-idle: 10
+      max-lifetime: 540000
+      connection-test-query: SELECT 1
