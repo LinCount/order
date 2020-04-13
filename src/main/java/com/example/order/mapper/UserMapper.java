@@ -15,4 +15,5 @@ public interface UserMapper {
     List<User> getAllUser();
     @Select("select * from user where u_id = #{u_id}")
     User findUserById(@Param("u_id")String u_id);
+
 }
