@@ -1,7 +1,6 @@
 package com.example.order.utils;
 
 import java.util.List;
-import java.util.Map;
 
 //接口json数据拼接类
 public class  ResultUtil<T> {
