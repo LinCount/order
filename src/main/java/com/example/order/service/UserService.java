@@ -14,7 +14,13 @@ public class UserService {
     public User findUserById(String id){
         return userMapper.findUserById(id);
     }
+    public User findUserByAccount(String account){
+        return userMapper.findUserByAcount(account);
+    }
     public List<User> getAllUser(){
         return userMapper.getAllUser();
+    }
+    public Integer saveUser(User user){
+        return userMapper.saveUser(user);
     }
 }

@@ -14,6 +14,7 @@ public class User implements Serializable {
     private String brief;//简介
     private Date c_time;//创建时间
     private String address;//地址
+    private String token;//登录标识
 
     public String getU_id() {
         return u_id;
@@ -93,5 +94,13 @@ public class User implements Serializable {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }
