@@ -22,6 +22,6 @@ public interface UserMapper {
     User findUserByAcount(@Param("account")String account);
     //插入一条数据
     @Insert("insert into user(u_id,name,account,password,phone,sex,birthday,brief,c_time,address,token) " +
-            "values(#{u_id},#{name},#{account},#{password},#{phone}#{sex},#{birthday},#{brief},#{c_time,jdbcType=TIMESTAMP},#{address},#{token})")
+            "values(#{u_id},#{name},#{account},#{password},#{phone},#{sex},#{birthday},#{brief},#{c_time,jdbcType=TIMESTAMP},#{address},#{token})")
     Integer saveUser(User user);
 }
