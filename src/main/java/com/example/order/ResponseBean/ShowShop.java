@@ -22,6 +22,7 @@ public class ShowShop {
         this.info[2]=shop.getBeginDelive();
         String[] index=shop.getType().split(",");
         if (null==index) {
+
            String[] a=new String[1];
            a[1]=null;
            this.label=a;
