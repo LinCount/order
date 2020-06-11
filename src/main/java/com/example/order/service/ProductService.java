@@ -12,7 +12,7 @@ import java.util.List;
 public class ProductService {
     @Autowired
     ProductMapper productMapper;
-    public List<Product> findProductByS_id(String s_id){
+    public List<Product> findProductAll(String s_id){
         List<Product> list =null;
         list = productMapper.findProductByS_id(s_id);
         return list;
