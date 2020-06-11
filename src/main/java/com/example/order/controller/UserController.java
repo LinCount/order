@@ -20,7 +20,9 @@ public class UserController {
     @Autowired
     UserService userService;
     //登录接口
-    @RequestMapping(value = "/login",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/login",
+            method = RequestMethod.POST,
+            produces = "application/json;charset=UTF-8")
     public ResponseResult<Token> login(@RequestBody UserBean userBean){
         //检查必要字段格式
         //查询用户是否存在
@@ -38,7 +40,9 @@ public class UserController {
         }
     }
     //注册
-    @RequestMapping(value = "/register",method = RequestMethod.POST,produces = "application/json;charset=UTF-8")
+    @RequestMapping(value = "/register",
+            method = RequestMethod.POST,
+            produces = "application/json;charset=UTF-8")
     public ResponseResult saveUser(@RequestBody UserBean userBean){
         User user=userService.findUserByAccount(userBean.username);
         if(null==user){
