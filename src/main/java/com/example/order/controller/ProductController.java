@@ -17,7 +17,7 @@ public class ProductController {
 
     @GetMapping(value = "/{s_id}")
     public ResponseResult<List<Product>> product(@PathVariable(name = "s_id") String s_id){
-        List<Product> product = productService.findProductByS_id(s_id);
+        List<Product> product = productService.findProductAll(s_id);
         return Response.makeRsp(200,"菜品查询成功",product);
     }
 }
