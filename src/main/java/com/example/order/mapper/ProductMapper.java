@@ -13,4 +13,7 @@ import java.util.List;
 public interface ProductMapper {
     @Select("select * from product where s_id =#{s_id}")
     List<Product> findProductByS_id(@Param("s_id")String s_id);
+    @Select("select * from product where s_id =#{s_id} and type=#{type}")
+    List<Product> findProductByType(@Param("s_id")String s_id,@Param("type")String type);
+
 }

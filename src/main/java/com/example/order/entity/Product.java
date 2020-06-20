@@ -16,6 +16,7 @@ public class Product implements Serializable {
     private String nutrition;//营养属性
     private String c_time;//创建时间
     private double grade;//评分
+    private Integer number;//菜品数量
 
     public String getP_id() {
         return p_id;
@@ -111,5 +112,13 @@ public class Product implements Serializable {
 
     public void setGrade(double grade) {
         this.grade = grade;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
     }
 }

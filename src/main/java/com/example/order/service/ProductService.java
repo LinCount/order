@@ -17,4 +17,7 @@ public class ProductService {
         list = productMapper.findProductByS_id(s_id);
         return list;
     }
+    public List<Product> findProductByType(String id,String type){
+        return productMapper.findProductByType(id,type);
+    }
 }

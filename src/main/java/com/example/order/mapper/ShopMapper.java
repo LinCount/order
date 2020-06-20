@@ -11,7 +11,7 @@ import java.util.Set;
 @Mapper
 public interface ShopMapper {
     //商家浏览查询，缺少分页
-    @Select("select * from shop where address=#{address}")
+    @Select("select * from shop where address like  concat('%',#{address},'%')")
     @Results(
       {@Result(property = "s_id" ,column = "s_id"),
               @Result(property = "shopName" ,column = "shopName"),
