@@ -21,6 +21,7 @@ public class ResponseProduct {
                 this.content.add(listProduct1);
             }
         }else {
+
             this.content=null;
         }
     }
