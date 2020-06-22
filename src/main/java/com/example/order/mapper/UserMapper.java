@@ -1,10 +1,7 @@
 package com.example.order.mapper;
 
 import com.example.order.entity.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -24,4 +21,7 @@ public interface UserMapper {
     @Insert("insert into user(u_id,name,account,password,phone,sex,birthday,brief,c_time,address,token) " +
             "values(#{u_id},#{name},#{account},#{password},#{phone},#{sex},#{birthday},#{brief},#{c_time,jdbcType=TIMESTAMP},#{address},#{token})")
     Integer saveUser(User user);
+    //更新密码
+    @Update("update user set password = #{password} where account = #{account}")
+    Integer updatePwd(User user);
 }

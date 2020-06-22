@@ -18,22 +18,6 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
-    @GetMapping(value = "/{s_id}")
-    public ResponseResult<ShopProduct> product(@PathVariable(name = "s_id") String s_id) {
-        int i = 1;
-        String type;
-
-            if (i <2) {
-                type = "小吃";
-                ShopProduct shopProduct= productService.findProductByS_id(s_id,type);
-                return Response.makeRsp(200,"成功",shopProduct);
-            } else {
-                type = "饮料";
-                ShopProduct shopProduct= productService.findProductByS_id(s_id,type);
-                return Response.makeRsp(200,"成功",shopProduct);
-            }
-
-    }
     @RequestMapping(value = "/getProduct",method = RequestMethod.GET,produces = "application/json;charset=UTF-8")
     public ResponseResult<List<ResponseProduct>> getShopProduct(@RequestParam String id){
         List<ResponseProduct> list=new ArrayList<>();
