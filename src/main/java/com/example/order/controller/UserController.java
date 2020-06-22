@@ -76,6 +76,7 @@ public class UserController {
         }
     }
 
+
     @RequestMapping(value = "/getAllUser",method = RequestMethod.GET)
     public ResponseResult<List<User>> getAllUser(){
         return Response.makeOKRsp(userService.getAllUser());
