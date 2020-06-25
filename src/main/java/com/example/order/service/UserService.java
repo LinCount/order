@@ -2,6 +2,7 @@ package com.example.order.service;
 
 import com.example.order.entity.User;
 import com.example.order.mapper.UserMapper;
+import com.example.order.requestBean.UserBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,9 @@ public class UserService {
     }
     public User findUserByAccount(String account){
         return userMapper.findUserByAcount(account);
+    }
+    public Integer updatePwd(User user){
+        return  userMapper.updatePwd(user);
     }
     public List<User> getAllUser(){
         return userMapper.getAllUser();

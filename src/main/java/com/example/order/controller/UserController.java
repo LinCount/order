@@ -56,6 +56,26 @@ public class UserController {
             return Response.makeRsp(400,"用户已存在");
         }
     }
+    @RequestMapping(value = "/updatepassword",
+                    method = RequestMethod.POST,
+                    produces = "application/json;charset=UTF-8")
+    public ResponseResult updatePassword(@RequestBody UserBean userBean){
+        User user=userService.findUserByAccount(userBean.username);
+        if (null==user){
+            return Response.makeRsp(400,"用户不存在");
+        }else {
+            if (userBean.pwd.equals(user.getPassword())){
+                return Response.makeRsp(400,"该密码正在使用");
+            }else {
+                user.setPassword(userBean.pwd);
+
+                userService.updatePwd(user);
+
+                return Response.makeRsp(200,"密码修改成功");
+            }
+        }
+    }
+
 
     @RequestMapping(value = "/getAllUser",method = RequestMethod.GET)
     public ResponseResult<List<User>> getAllUser(){
