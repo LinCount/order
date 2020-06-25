@@ -20,4 +20,10 @@ public class ProductService {
     public List<Product> findProductByType(String id,String type){
         return productMapper.findProductByType(id,type);
     }
+    public Integer findProductNumberById(String p_id){
+        return productMapper.findProductNumberById(p_id);
+    }
+    public Integer updaureProductNumberById(String p_id,Integer number){
+        return productMapper.updaureProductNumberById(p_id,number);
+    }
 }

@@ -7,6 +7,8 @@ import java.util.Date;
 //订单实体
 public class Orders implements Serializable {
     private String o_id;//订单编号
+    private String u_id;//用户编号
+    private String d_id;//接单员编号
     private Date o_time;//下单时间
     private Date s_time;//送达时间
     private String s_status;//接送状态
@@ -16,6 +18,36 @@ public class Orders implements Serializable {
     private BigDecimal o_money;//订单总额
     private String s_address;//送餐地址
     private String remark;//备注
+
+    public Orders() { }
+
+    public Orders(String o_id,String u_id) {
+        this.o_id = o_id;
+        this.u_id=u_id;
+        this.o_time = new Date(java.lang.System.currentTimeMillis());
+        this.s_status = new String("no");
+        this.is_send = new String("no");
+        this.o_status = new String("no");
+        this.p_status = new String("yes");
+        this.o_money =new BigDecimal(0);
+        this.s_address = "天空之城";
+    }
+
+    public String getU_id() {
+        return u_id;
+    }
+
+    public void setU_id(String u_id) {
+        this.u_id = u_id;
+    }
+
+    public String getD_id() {
+        return d_id;
+    }
+
+    public void setD_id(String d_id) {
+        this.d_id = d_id;
+    }
 
     public String getO_id() {
         return o_id;
