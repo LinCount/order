@@ -1,17 +1,20 @@
 package com.example.order.controller;
 
 import com.example.order.Api.Response;
+import com.example.order.ResponseBean.HistoryOrder;
 import com.example.order.entity.HistoryProduct;
 import com.example.order.entity.Orders;
 import com.example.order.Api.ResponseResult;
 import com.example.order.mapper.HistoryMapper;
 import com.example.order.requestBean.FoodNumber;
+import com.example.order.service.HistoryService;
 import com.example.order.service.OrderService;
 import com.example.order.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.UUID;
@@ -24,7 +27,7 @@ public class OrderController {
     @Autowired
     OrderService orderService;
     @Autowired
-    HistoryMapper historyMapper;
+    HistoryService historyService;
     //购买
     @RequestMapping(value = "/orderCar",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
     public ResponseResult orderFood(@RequestBody List<FoodNumber> list){
@@ -32,7 +35,7 @@ public class OrderController {
             return Response.makeRsp(403,"购物车为空");
         }
         BigDecimal bigDecimal=new BigDecimal(0);
-        Orders orders = new Orders(UUID.randomUUID().toString(),"1121");//生成订单
+        Orders orders = new Orders(UUID.randomUUID().toString(),list.get(0).uid);//生成订单
         try {
             for (FoodNumber food : list) {
                 //店铺商品数量减少
@@ -48,9 +51,10 @@ public class OrderController {
                             HistoryProduct historyProduct=new HistoryProduct(UUID.randomUUID().toString());
                             historyProduct.setO_id(orders.getO_id());
                             historyProduct.setP_id(food.item.id);
+                            historyProduct.setProductName(food.item.name);
                             historyProduct.setOrderNum(food.item.number);
                             historyProduct.setProductmoney(food.item.prcie.multiply(new BigDecimal(food.item.number)));
-                            historyMapper.saveHistoty(historyProduct);
+                            historyService.saveHistoty(historyProduct);
                         }
                     } else {
                         return Response.makeRsp(403, "菜品数量不足");
@@ -67,4 +71,24 @@ public class OrderController {
         }
         return Response.makeRsp(200,"购买成功");
     }
+    //历史订单查询
+    @RequestMapping(value = "/historyOrder",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
+    public ResponseResult<List<HistoryOrder>> showHistoryOrder(@RequestParam String userid){
+        //获取全部订单号
+        if(userid.equals(""))
+            return Response.makeErrRsp("用户参数数错误");
+        List<Orders> orderNum=orderService.getOrderIdByUid(userid);
+        if(null==orderNum)
+            return Response.makeOKRsp("该用户无历史订单");
+        List<HistoryOrder> orderList=new ArrayList<>();
+        for (Orders orders:orderNum) {
+            HistoryOrder historyOrder=new HistoryOrder();
+            historyOrder.orderId=orders.getO_id();
+            historyOrder.product=historyService.getHistoryProductByOid(orders.getO_id());
+            historyOrder.allmoney=orders.getO_money();
+            orderList.add(historyOrder);
+        }
+        return  Response.makeOKRsp(orderList);
+    }
+
 }

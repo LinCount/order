@@ -7,13 +7,28 @@ public class HistoryProduct implements Serializable {
     private String h_id;
     private String o_id;
     private String p_id;
+    private String productName;
     private Integer orderNum;
     private BigDecimal productmoney;
+
+    public HistoryProduct(String p_id,String productName ,Integer orderNum, BigDecimal productmoney) {
+        this.p_id = p_id;
+        this.productName=productName;
+        this.orderNum = orderNum;
+        this.productmoney = productmoney;
+    }
 
     public HistoryProduct(String h_id) {
         this.h_id = h_id;
     }
 
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
 
     public String getH_id() {
         return h_id;
