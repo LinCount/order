@@ -1,0 +1,425 @@
+2020-06-22 08:10:18.930  INFO 2816 --- [main] com.example.order.OrderApplication       : Starting OrderApplication on DESKTOP-URLD6GT with PID 2816 (F:\order\target\classes started by MWY1517955281 in F:\order)
+2020-06-22 08:10:18.953  INFO 2816 --- [main] com.example.order.OrderApplication       : No active profile set, falling back to default profiles: default
+2020-06-22 08:10:23.311  INFO 2816 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-22 08:10:23.369  INFO 2816 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-22 08:10:23.369  INFO 2816 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-06-22 08:10:23.847  INFO 2816 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-22 08:10:23.848 DEBUG 2816 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-06-22 08:10:23.848  INFO 2816 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4476 ms
+2020-06-22 08:10:24.800  INFO 2816 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-22 08:10:24.820 DEBUG 2816 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-06-22 08:10:24.920 DEBUG 2816 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2020-06-22 08:10:24.952 DEBUG 2816 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-06-22 08:10:24.974 DEBUG 2816 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-22 08:10:25.377  INFO 2816 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-22 08:10:25.380  INFO 2816 --- [main] com.example.order.OrderApplication       : Started OrderApplication in 9.732 seconds (JVM running for 14.62)
+2020-06-22 08:10:26.135  INFO 2816 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-22 08:10:26.135  INFO 2816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-22 08:10:26.136 DEBUG 2816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2020-06-22 08:10:26.147 DEBUG 2816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-06-22 08:10:26.147  INFO 2816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-06-22 08:10:26.255 DEBUG 2816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/user/updatepassword", parameters={}
+2020-06-22 08:10:26.262 DEBUG 2816 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.order.controller.UserController#updatePassword(UserBean)
+2020-06-22 08:10:26.530 DEBUG 2816 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.example.order.requestBean.UserBean@694f266]
+2020-06-22 08:10:26.588  WARN 2816 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariConfig           : KevinHikariPool - idleTimeout is close to or more than maxLifetime, disabling it.
+2020-06-22 08:10:26.590  INFO 2816 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : KevinHikariPool - Starting...
+2020-06-22 08:10:42.114  INFO 2816 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : KevinHikariPool - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+2020-06-22 08:10:42.144  INFO 2816 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : KevinHikariPool - Start completed.
+2020-06-22 08:10:42.257 DEBUG 2816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Failed to complete request: org.apache.ibatis.binding.BindingException: Mapper method 'com.example.order.mapper.UserMapper.updatePwd' has an unsupported return type: class com.example.order.entity.User
+2020-06-22 08:10:42.273 ERROR 2816 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.apache.ibatis.binding.BindingException: Mapper method 'com.example.order.mapper.UserMapper.updatePwd' has an unsupported return type: class com.example.order.entity.User] with root cause
+
+org.apache.ibatis.binding.BindingException: Mapper method 'com.example.order.mapper.UserMapper.updatePwd' has an unsupported return type: class com.example.order.entity.User
+	at org.apache.ibatis.binding.MapperMethod.rowCountResult(MapperMethod.java:110)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:63)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy76.updatePwd(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy77.updatePwd(Unknown Source)
+	at com.example.order.service.UserService.updatePwd(UserService.java:21)
+	at com.example.order.controller.UserController.updatePassword(UserController.java:70)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2020-06-22 08:10:42.279 DEBUG 2816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2020-06-22 08:10:42.282 DEBUG 2816 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2020-06-22 08:10:42.377 DEBUG 2816 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-06-22 08:10:42.379 DEBUG 2816 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Mon Jun 22 08:10:42 CST 2020, status=500, error=Internal Server Error, message=Mapper met (truncated)...]
+2020-06-22 08:10:42.466 DEBUG 2816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2020-06-22 08:31:55.769  INFO 14468 --- [main] com.example.order.OrderApplication       : Starting OrderApplication on DESKTOP-URLD6GT with PID 14468 (F:\order\target\classes started by MWY1517955281 in F:\order)
+2020-06-22 08:31:55.773  INFO 14468 --- [main] com.example.order.OrderApplication       : No active profile set, falling back to default profiles: default
+2020-06-22 08:31:58.229  INFO 14468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-22 08:31:58.236  INFO 14468 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-22 08:31:58.237  INFO 14468 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-06-22 08:31:58.396  INFO 14468 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-22 08:31:58.397 DEBUG 14468 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-06-22 08:31:58.397  INFO 14468 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2492 ms
+2020-06-22 08:31:58.824  INFO 14468 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-22 08:31:58.833 DEBUG 14468 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-06-22 08:31:58.891 DEBUG 14468 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2020-06-22 08:31:58.909 DEBUG 14468 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-06-22 08:31:58.916 DEBUG 14468 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-22 08:31:59.001  INFO 14468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-22 08:31:59.003  INFO 14468 --- [main] com.example.order.OrderApplication       : Started OrderApplication in 3.923 seconds (JVM running for 5.325)
+2020-06-22 08:32:02.328  INFO 14468 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-22 08:32:02.329  INFO 14468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-22 08:32:02.329 DEBUG 14468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2020-06-22 08:32:02.345 DEBUG 14468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-06-22 08:32:02.346  INFO 14468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2020-06-22 08:32:02.353 DEBUG 14468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/user/updatepassword", parameters={}
+2020-06-22 08:32:02.358 DEBUG 14468 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.order.controller.UserController#updatePassword(UserBean)
+2020-06-22 08:32:02.419 DEBUG 14468 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.example.order.requestBean.UserBean@6e344a1f]
+2020-06-22 08:32:02.443  WARN 14468 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariConfig           : KevinHikariPool - idleTimeout is close to or more than maxLifetime, disabling it.
+2020-06-22 08:32:02.445  INFO 14468 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : KevinHikariPool - Starting...
+2020-06-22 08:32:02.754  INFO 14468 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : KevinHikariPool - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+2020-06-22 08:32:02.786  INFO 14468 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : KevinHikariPool - Start completed.
+2020-06-22 08:32:02.840 DEBUG 14468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Failed to complete request: org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'pwd' in 'class com.example.order.entity.User'
+2020-06-22 08:32:02.846 ERROR 14468 --- [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'pwd' in 'class com.example.order.entity.User'] with root cause
+
+org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'pwd' in 'class com.example.order.entity.User'
+	at org.apache.ibatis.reflection.Reflector.getGetInvoker(Reflector.java:419)
+	at org.apache.ibatis.reflection.MetaClass.getGetInvoker(MetaClass.java:164)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.getBeanProperty(BeanWrapper.java:162)
+	at org.apache.ibatis.reflection.wrapper.BeanWrapper.get(BeanWrapper.java:49)
+	at org.apache.ibatis.reflection.MetaObject.getValue(MetaObject.java:122)
+	at org.apache.ibatis.scripting.defaults.DefaultParameterHandler.setParameters(DefaultParameterHandler.java:79)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.parameterize(PreparedStatementHandler.java:93)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.parameterize(RoutingStatementHandler.java:64)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy64.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:294)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:63)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy76.updatePwd(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy77.updatePwd(Unknown Source)
+	at com.example.order.service.UserService.updatePwd(UserService.java:22)
+	at com.example.order.controller.UserController.updatePassword(UserController.java:72)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1594)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2020-06-22 08:32:02.853 DEBUG 14468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for POST "/error", parameters={}
+2020-06-22 08:32:02.856 DEBUG 14468 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2020-06-22 08:32:02.871 DEBUG 14468 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2020-06-22 08:32:02.873 DEBUG 14468 --- [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Mon Jun 22 08:32:02 CST 2020, status=500, error=Internal Server Error, message=nested exc (truncated)...]
+2020-06-22 08:32:02.902 DEBUG 14468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2020-06-22 08:33:24.134  INFO 14100 --- [main] com.example.order.OrderApplication       : Starting OrderApplication on DESKTOP-URLD6GT with PID 14100 (F:\order\target\classes started by MWY1517955281 in F:\order)
+2020-06-22 08:33:24.139  INFO 14100 --- [main] com.example.order.OrderApplication       : No active profile set, falling back to default profiles: default
+2020-06-22 08:33:25.741  INFO 14100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-22 08:33:25.750  INFO 14100 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-22 08:33:25.750  INFO 14100 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-06-22 08:33:25.926  INFO 14100 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-22 08:33:25.927 DEBUG 14100 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-06-22 08:33:25.927  INFO 14100 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1708 ms
+2020-06-22 08:33:26.277  INFO 14100 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-22 08:33:26.285 DEBUG 14100 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-06-22 08:33:26.331 DEBUG 14100 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2020-06-22 08:33:26.352 DEBUG 14100 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-06-22 08:33:26.360 DEBUG 14100 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-22 08:33:26.453  INFO 14100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-22 08:33:26.457  INFO 14100 --- [main] com.example.order.OrderApplication       : Started OrderApplication in 3.047 seconds (JVM running for 4.249)
+2020-06-22 08:33:29.871  INFO 14100 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-22 08:33:29.872  INFO 14100 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-22 08:33:29.872 DEBUG 14100 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2020-06-22 08:33:29.884 DEBUG 14100 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-06-22 08:33:29.884  INFO 14100 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2020-06-22 08:33:29.893 DEBUG 14100 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/user/updatepassword", parameters={}
+2020-06-22 08:33:29.900 DEBUG 14100 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.order.controller.UserController#updatePassword(UserBean)
+2020-06-22 08:33:29.964 DEBUG 14100 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.example.order.requestBean.UserBean@5b2b4513]
+2020-06-22 08:33:29.987  WARN 14100 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariConfig           : KevinHikariPool - idleTimeout is close to or more than maxLifetime, disabling it.
+2020-06-22 08:33:29.988  INFO 14100 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : KevinHikariPool - Starting...
+2020-06-22 08:33:30.309  INFO 14100 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : KevinHikariPool - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+2020-06-22 08:33:30.340  INFO 14100 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : KevinHikariPool - Start completed.
+2020-06-22 08:33:30.485 DEBUG 14100 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;charset=UTF-8', given [*/*] and supported [application/json;charset=UTF-8]
+2020-06-22 08:33:30.506 DEBUG 14100 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.example.order.Api.ResponseResult@5193cc50]
+2020-06-22 08:33:30.518 DEBUG 14100 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-06-22 08:33:58.640 DEBUG 14100 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/user/updatepassword", parameters={}
+2020-06-22 08:33:58.640 DEBUG 14100 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.order.controller.UserController#updatePassword(UserBean)
+2020-06-22 08:33:58.647 DEBUG 14100 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.example.order.requestBean.UserBean@232029c3]
+2020-06-22 08:33:58.794 DEBUG 14100 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;charset=UTF-8', given [*/*] and supported [application/json;charset=UTF-8]
+2020-06-22 08:33:58.794 DEBUG 14100 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.example.order.Api.ResponseResult@5d7c90eb]
+2020-06-22 08:33:58.795 DEBUG 14100 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-06-22 08:34:06.677 DEBUG 14100 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/user/updatepassword", parameters={}
+2020-06-22 08:34:06.677 DEBUG 14100 --- [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.order.controller.UserController#updatePassword(UserBean)
+2020-06-22 08:34:06.704 DEBUG 14100 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.example.order.requestBean.UserBean@6a8cbe]
+2020-06-22 08:34:06.784 DEBUG 14100 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;charset=UTF-8', given [*/*] and supported [application/json;charset=UTF-8]
+2020-06-22 08:34:06.784 DEBUG 14100 --- [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.example.order.Api.ResponseResult@7e155018]
+2020-06-22 08:34:06.785 DEBUG 14100 --- [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-06-22 08:35:50.509  INFO 15840 --- [main] com.example.order.OrderApplication       : Starting OrderApplication on DESKTOP-URLD6GT with PID 15840 (F:\order\target\classes started by MWY1517955281 in F:\order)
+2020-06-22 08:35:50.513  INFO 15840 --- [main] com.example.order.OrderApplication       : No active profile set, falling back to default profiles: default
+2020-06-22 08:35:51.890  INFO 15840 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-22 08:35:51.898  INFO 15840 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-22 08:35:51.898  INFO 15840 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-06-22 08:35:52.040  INFO 15840 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-22 08:35:52.040 DEBUG 15840 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-06-22 08:35:52.040  INFO 15840 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1467 ms
+2020-06-22 08:35:52.320  INFO 15840 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-22 08:35:52.328 DEBUG 15840 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-06-22 08:35:52.367 DEBUG 15840 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2020-06-22 08:35:52.389 DEBUG 15840 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-06-22 08:35:52.396 DEBUG 15840 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-22 08:35:52.485  INFO 15840 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-22 08:35:52.488  INFO 15840 --- [main] com.example.order.OrderApplication       : Started OrderApplication in 2.76 seconds (JVM running for 3.879)
+2020-06-22 08:35:55.218  INFO 15840 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-22 08:35:55.219  INFO 15840 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-22 08:35:55.219 DEBUG 15840 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2020-06-22 08:35:55.224 DEBUG 15840 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-06-22 08:35:55.224  INFO 15840 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2020-06-22 08:35:55.234 DEBUG 15840 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/user/updatepassword", parameters={}
+2020-06-22 08:35:55.238 DEBUG 15840 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.order.controller.UserController#updatePassword(UserBean)
+2020-06-22 08:35:55.298 DEBUG 15840 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.example.order.requestBean.UserBean@7c0729bb]
+2020-06-22 08:35:55.330  WARN 15840 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariConfig           : KevinHikariPool - idleTimeout is close to or more than maxLifetime, disabling it.
+2020-06-22 08:35:55.331  INFO 15840 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : KevinHikariPool - Starting...
+2020-06-22 08:35:56.180  INFO 15840 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : KevinHikariPool - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+2020-06-22 08:35:56.215  INFO 15840 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : KevinHikariPool - Start completed.
+2020-06-22 08:35:56.285 DEBUG 15840 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;charset=UTF-8', given [*/*] and supported [application/json;charset=UTF-8]
+2020-06-22 08:35:56.293 DEBUG 15840 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.example.order.Api.ResponseResult@2aafddac]
+2020-06-22 08:35:56.304 DEBUG 15840 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-06-22 08:36:25.292  INFO 19260 --- [main] com.example.order.OrderApplication       : Starting OrderApplication on DESKTOP-URLD6GT with PID 19260 (F:\order\target\classes started by MWY1517955281 in F:\order)
+2020-06-22 08:36:25.348  INFO 19260 --- [main] com.example.order.OrderApplication       : No active profile set, falling back to default profiles: default
+2020-06-22 08:36:26.646  INFO 19260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-22 08:36:26.654  INFO 19260 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-22 08:36:26.654  INFO 19260 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-06-22 08:36:26.761  INFO 19260 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-22 08:36:26.761 DEBUG 19260 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-06-22 08:36:26.761  INFO 19260 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1332 ms
+2020-06-22 08:36:27.049  INFO 19260 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-22 08:36:27.056 DEBUG 19260 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-06-22 08:36:27.098 DEBUG 19260 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2020-06-22 08:36:27.118 DEBUG 19260 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-06-22 08:36:27.125 DEBUG 19260 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-22 08:36:27.210  INFO 19260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-22 08:36:27.213  INFO 19260 --- [main] com.example.order.OrderApplication       : Started OrderApplication in 2.627 seconds (JVM running for 3.943)
+2020-06-22 08:36:29.589  INFO 19260 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-22 08:36:29.590  INFO 19260 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-22 08:36:29.590 DEBUG 19260 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2020-06-22 08:36:29.598 DEBUG 19260 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-06-22 08:36:29.598  INFO 19260 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-06-22 08:36:29.606 DEBUG 19260 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/user/updatepassword", parameters={}
+2020-06-22 08:36:29.610 DEBUG 19260 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.order.controller.UserController#updatePassword(UserBean)
+2020-06-22 08:36:29.677 DEBUG 19260 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.example.order.requestBean.UserBean@6948c6ab]
+2020-06-22 08:36:29.700  WARN 19260 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariConfig           : KevinHikariPool - idleTimeout is close to or more than maxLifetime, disabling it.
+2020-06-22 08:36:29.701  INFO 19260 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : KevinHikariPool - Starting...
+2020-06-22 08:36:30.563  INFO 19260 --- [http-nio-8080-exec-2] com.zaxxer.hikari.pool.PoolBase          : KevinHikariPool - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+2020-06-22 08:36:30.594  INFO 19260 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : KevinHikariPool - Start completed.
+2020-06-22 08:36:30.633 DEBUG 19260 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;charset=UTF-8', given [*/*] and supported [application/json;charset=UTF-8]
+2020-06-22 08:36:30.645 DEBUG 19260 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.example.order.Api.ResponseResult@3a32235b]
+2020-06-22 08:36:30.654 DEBUG 19260 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-06-22 08:36:51.700  INFO 1100 --- [main] com.example.order.OrderApplication       : Starting OrderApplication on DESKTOP-URLD6GT with PID 1100 (F:\order\target\classes started by MWY1517955281 in F:\order)
+2020-06-22 08:36:51.705  INFO 1100 --- [main] com.example.order.OrderApplication       : No active profile set, falling back to default profiles: default
+2020-06-22 08:36:53.291  INFO 1100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-22 08:36:53.302  INFO 1100 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-22 08:36:53.302  INFO 1100 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-06-22 08:36:53.477  INFO 1100 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-22 08:36:53.478 DEBUG 1100 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-06-22 08:36:53.478  INFO 1100 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1672 ms
+2020-06-22 08:36:53.770  INFO 1100 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-22 08:36:53.779 DEBUG 1100 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-06-22 08:36:53.819 DEBUG 1100 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2020-06-22 08:36:53.841 DEBUG 1100 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-06-22 08:36:53.849 DEBUG 1100 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-22 08:36:53.947  INFO 1100 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-22 08:36:53.950  INFO 1100 --- [main] com.example.order.OrderApplication       : Started OrderApplication in 3.132 seconds (JVM running for 4.247)
+2020-06-22 08:36:56.460  INFO 1100 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-22 08:36:56.461  INFO 1100 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-22 08:36:56.461 DEBUG 1100 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2020-06-22 08:36:56.467 DEBUG 1100 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-06-22 08:36:56.468  INFO 1100 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2020-06-22 08:36:56.476 DEBUG 1100 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/user/updatepassword", parameters={}
+2020-06-22 08:36:56.481 DEBUG 1100 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.order.controller.UserController#updatePassword(UserBean)
+2020-06-22 08:36:56.550 DEBUG 1100 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.example.order.requestBean.UserBean@4da3725b]
+2020-06-22 08:36:56.573  WARN 1100 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariConfig           : KevinHikariPool - idleTimeout is close to or more than maxLifetime, disabling it.
+2020-06-22 08:36:56.574  INFO 1100 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : KevinHikariPool - Starting...
+2020-06-22 08:36:56.899  INFO 1100 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : KevinHikariPool - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+2020-06-22 08:36:56.930  INFO 1100 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : KevinHikariPool - Start completed.
+2020-06-22 08:36:56.991 DEBUG 1100 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;charset=UTF-8', given [*/*] and supported [application/json;charset=UTF-8]
+2020-06-22 08:36:57.000 DEBUG 1100 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.example.order.Api.ResponseResult@6d70960f]
+2020-06-22 08:36:57.011 DEBUG 1100 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-06-22 08:38:10.424  INFO 13640 --- [main] com.example.order.OrderApplication       : Starting OrderApplication on DESKTOP-URLD6GT with PID 13640 (F:\order\target\classes started by MWY1517955281 in F:\order)
+2020-06-22 08:38:10.429  INFO 13640 --- [main] com.example.order.OrderApplication       : No active profile set, falling back to default profiles: default
+2020-06-22 08:38:12.247  INFO 13640 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-22 08:38:12.259  INFO 13640 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-22 08:38:12.259  INFO 13640 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-06-22 08:38:12.437  INFO 13640 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-22 08:38:12.437 DEBUG 13640 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-06-22 08:38:12.438  INFO 13640 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1918 ms
+2020-06-22 08:38:12.791  INFO 13640 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-22 08:38:12.802 DEBUG 13640 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-06-22 08:38:12.849 DEBUG 13640 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2020-06-22 08:38:12.874 DEBUG 13640 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-06-22 08:38:12.882 DEBUG 13640 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-22 08:38:12.980  INFO 13640 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-22 08:38:12.982  INFO 13640 --- [main] com.example.order.OrderApplication       : Started OrderApplication in 3.261 seconds (JVM running for 4.39)
+2020-06-22 08:38:15.656  INFO 13640 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-22 08:38:15.657  INFO 13640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-22 08:38:15.657 DEBUG 13640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2020-06-22 08:38:15.663 DEBUG 13640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-06-22 08:38:15.663  INFO 13640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-06-22 08:38:15.670 DEBUG 13640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/user/updatepassword", parameters={}
+2020-06-22 08:38:15.674 DEBUG 13640 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.order.controller.UserController#updatePassword(UserBean)
+2020-06-22 08:38:15.805 DEBUG 13640 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.example.order.requestBean.UserBean@52c0aa52]
+2020-06-22 08:38:15.828  WARN 13640 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariConfig           : KevinHikariPool - idleTimeout is close to or more than maxLifetime, disabling it.
+2020-06-22 08:38:15.829  INFO 13640 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : KevinHikariPool - Starting...
+2020-06-22 08:38:16.163  INFO 13640 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : KevinHikariPool - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+2020-06-22 08:38:16.190  INFO 13640 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : KevinHikariPool - Start completed.
+2020-06-22 08:38:16.246 DEBUG 13640 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;charset=UTF-8', given [*/*] and supported [application/json;charset=UTF-8]
+2020-06-22 08:38:16.256 DEBUG 13640 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.example.order.Api.ResponseResult@63a69241]
+2020-06-22 08:38:16.269 DEBUG 13640 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-06-22 08:39:47.418  INFO 9396 --- [main] com.example.order.OrderApplication       : Starting OrderApplication on DESKTOP-URLD6GT with PID 9396 (F:\order\target\classes started by MWY1517955281 in F:\order)
+2020-06-22 08:39:47.426  INFO 9396 --- [main] com.example.order.OrderApplication       : No active profile set, falling back to default profiles: default
+2020-06-22 08:39:48.828  INFO 9396 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-06-22 08:39:48.839  INFO 9396 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-06-22 08:39:48.839  INFO 9396 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2020-06-22 08:39:49.046  INFO 9396 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-06-22 08:39:49.047 DEBUG 9396 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2020-06-22 08:39:49.047  INFO 9396 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1486 ms
+2020-06-22 08:39:49.457  INFO 9396 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-22 08:39:49.467 DEBUG 9396 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2020-06-22 08:39:49.511 DEBUG 9396 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 8 mappings in 'requestMappingHandlerMapping'
+2020-06-22 08:39:49.533 DEBUG 9396 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2020-06-22 08:39:49.541 DEBUG 9396 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2020-06-22 08:39:49.628  INFO 9396 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-22 08:39:49.631  INFO 9396 --- [main] com.example.order.OrderApplication       : Started OrderApplication in 2.895 seconds (JVM running for 4.017)
+2020-06-22 08:39:52.547  INFO 9396 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-22 08:39:52.548  INFO 9396 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-06-22 08:39:52.548 DEBUG 9396 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2020-06-22 08:39:52.554 DEBUG 9396 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2020-06-22 08:39:52.554  INFO 9396 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-06-22 08:39:52.561 DEBUG 9396 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/user/updatepassword", parameters={}
+2020-06-22 08:39:52.566 DEBUG 9396 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.order.controller.UserController#updatePassword(UserBean)
+2020-06-22 08:39:52.670 DEBUG 9396 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.example.order.requestBean.UserBean@5be035eb]
+2020-06-22 08:39:52.692  WARN 9396 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariConfig           : KevinHikariPool - idleTimeout is close to or more than maxLifetime, disabling it.
+2020-06-22 08:39:52.693  INFO 9396 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : KevinHikariPool - Starting...
+2020-06-22 08:39:53.075  INFO 9396 --- [http-nio-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : KevinHikariPool - Driver does not support get/set network timeout for connections. (com.mysql.jdbc.JDBC4Connection.getNetworkTimeout()I)
+2020-06-22 08:39:53.118  INFO 9396 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : KevinHikariPool - Start completed.
+2020-06-22 08:39:53.164 DEBUG 9396 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;charset=UTF-8', given [*/*] and supported [application/json;charset=UTF-8]
+2020-06-22 08:39:53.171 DEBUG 9396 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.example.order.Api.ResponseResult@68e74f2b]
+2020-06-22 08:39:53.182 DEBUG 9396 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2020-06-22 08:39:58.634 DEBUG 9396 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/user/updatepassword", parameters={}
+2020-06-22 08:39:58.634 DEBUG 9396 --- [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.order.controller.UserController#updatePassword(UserBean)
+2020-06-22 08:39:58.635 DEBUG 9396 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [com.example.order.requestBean.UserBean@353bfef1]
+2020-06-22 08:39:58.703 DEBUG 9396 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json;charset=UTF-8', given [*/*] and supported [application/json;charset=UTF-8]
+2020-06-22 08:39:58.703 DEBUG 9396 --- [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing [com.example.order.Api.ResponseResult@37ea6074]
+2020-06-22 08:39:58.704 DEBUG 9396 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK

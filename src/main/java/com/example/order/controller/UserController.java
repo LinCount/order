@@ -31,6 +31,7 @@ public class UserController {
         if(null!=user){
             if(userBean.username.equals(user.getAccount())&&userBean.pwd.equals(user.getPassword())){
                 token.token=user.getToken();
+                token.uid=user.getU_id();
                 return Response.makeRsp(200,"登录成功",token);
             }else {
                 return Response.makeRsp(400,"登录失败",token);
