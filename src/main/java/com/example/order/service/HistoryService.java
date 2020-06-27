@@ -25,6 +25,7 @@ public class HistoryService {
             ResponseProductList p=new ResponseProductList();
             p.pid=product.getP_id();
             p.number=product.getOrderNum();
+            p.shopName=product.getShopName();
             p.calMoney=product.getProductmoney();
             p.productName=product.getProductName();
             list.add(p);

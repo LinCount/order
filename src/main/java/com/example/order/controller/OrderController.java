@@ -35,15 +35,13 @@ public class OrderController {
             return Response.makeRsp(403,"购物车为空");
         }
         BigDecimal bigDecimal=new BigDecimal(0);
-        Orders orders = new Orders(UUID.randomUUID().toString(),list.get(0).uid);//生成订单
+        Orders orders = new Orders(UUID.randomUUID().toString(),list.get(0).userid);//生成订单
         try {
             for (FoodNumber food : list) {
                 //店铺商品数量减少
                 Integer productNum = productService.findProductNumberById(food.item.id);
                 if(null==productNum)
                     return Response.makeRsp(403, "菜品不存在");
-                System.out.println(productNum);
-                System.out.println(food.item.number);
                 synchronized (productNum) {
                     if (productNum >= food.item.number) {
                         if(productService.updaureProductNumberById(food.item.id, productNum - food.number)==1){
@@ -51,6 +49,8 @@ public class OrderController {
                             HistoryProduct historyProduct=new HistoryProduct(UUID.randomUUID().toString());
                             historyProduct.setO_id(orders.getO_id());
                             historyProduct.setP_id(food.item.id);
+                            historyProduct.setShopName(food.shopname);
+                            System.out.println(food.shopname);
                             historyProduct.setProductName(food.item.name);
                             historyProduct.setOrderNum(food.item.number);
                             historyProduct.setProductmoney(food.item.prcie.multiply(new BigDecimal(food.item.number)));
@@ -86,6 +86,7 @@ public class OrderController {
             historyOrder.orderId=orders.getO_id();
             historyOrder.product=historyService.getHistoryProductByOid(orders.getO_id());
             historyOrder.allmoney=orders.getO_money();
+            historyOrder.shopName=historyOrder.product.get(0).shopName;
             orderList.add(historyOrder);
         }
         return  Response.makeOKRsp(orderList);
