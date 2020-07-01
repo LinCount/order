@@ -1,7 +1,9 @@
 package com.example.order.controller;
 
 import com.example.order.Api.Response;
+import com.example.order.ResponseBean.EchartsData;
 import com.example.order.ResponseBean.HistoryOrder;
+import com.example.order.ResponseBean.ResponseProductList;
 import com.example.order.entity.HistoryProduct;
 import com.example.order.entity.Orders;
 import com.example.order.Api.ResponseResult;
@@ -10,6 +12,7 @@ import com.example.order.requestBean.FoodNumber;
 import com.example.order.service.HistoryService;
 import com.example.order.service.OrderService;
 import com.example.order.service.ProductService;
+import com.example.order.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,6 +31,8 @@ public class OrderController {
     OrderService orderService;
     @Autowired
     HistoryService historyService;
+    @Autowired
+    UserService userService;
     //购买
     @RequestMapping(value = "/orderCar",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
     public ResponseResult orderFood(@RequestBody List<FoodNumber> list){
@@ -86,10 +91,44 @@ public class OrderController {
             historyOrder.orderId=orders.getO_id();
             historyOrder.product=historyService.getHistoryProductByOid(orders.getO_id());
             historyOrder.allmoney=orders.getO_money();
-            historyOrder.shopName=historyOrder.product.get(0).shopName;
+            if(historyOrder.product.size()>0)
+                for(ResponseProductList productList:historyOrder.product){
+                    if (!productList.equals("")){
+                        historyOrder.shopName=productList.shopName;
+                    }
+            }
             orderList.add(historyOrder);
         }
         return  Response.makeOKRsp(orderList);
+    }
+    @RequestMapping(value = "/echartsData",method = RequestMethod.GET,produces = "application/json;charset=utf-8")
+    public ResponseResult<List<EchartsData>> getEchartsData(@RequestParam String userid){
+        if(userid==null){
+            return Response.makeErrRsp("请输入正确的用户id");
+        }else {
+            if(userService.findUserById(userid)==null){
+                return Response.makeErrRsp("用户不存在");
+            }
+        }
+        List<EchartsData> echartsList=new ArrayList<>();
+        echartsList.add(0,new EchartsData("汤/面",0));
+        echartsList.add(1,new EchartsData("快餐",0));
+        echartsList.add(2,new EchartsData("早餐",0));
+        echartsList.add(3,new EchartsData("烧烤",0));
+        echartsList.add(4,new EchartsData("小炒",0));
+        //2.检查是否存在订单
+        List<Orders> ordersList=orderService.getOrderIdByUid(userid);
+        if(ordersList==null){
+            return Response.makeOKRsp(echartsList);
+        }
+       for(int i=0;i<=4;i++){
+           Integer value=productService.getNumberFromUid(userid,echartsList.get(i).getName());
+           System.out.println(value);
+           if(value>=0) {
+               echartsList.get(i).setValue(value);
+           }
+       }
+        return Response.makeOKRsp(echartsList);
     }
 
 }

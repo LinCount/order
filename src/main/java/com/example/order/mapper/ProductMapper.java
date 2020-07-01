@@ -22,4 +22,11 @@ public interface ProductMapper {
     //改变菜品数量
     @Update("update product set number=#{number} where p_id=#{p_id}")
     Integer updaureProductNumberById(@Param("p_id")String p_id,@Param("number")Integer number);
+    //根据用户id和菜品类型统计
+    @Select("SELECT COUNT(*) FROM product p WHERE p_id IN" +
+            "(SELECT p_id FROM historyproduct " +
+            "WHERE  o_id IN (SELECT o_id FROM orders WHERE u_id=#{userId}))" +
+            "AND p.`type`=#{type}" +
+            "LIMIT 1")
+    Integer getNumberFromUid(@Param("userId")String userId,@Param("type")String type);
 }

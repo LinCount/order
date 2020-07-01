@@ -22,4 +22,7 @@ public class ProductService {
     public Integer updaureProductNumberById(String p_id,Integer number){
         return productMapper.updaureProductNumberById(p_id,number);
     }
+    public Integer getNumberFromUid(String userId,String tyoe){
+        return productMapper.getNumberFromUid(userId,tyoe);
+    }
 }
