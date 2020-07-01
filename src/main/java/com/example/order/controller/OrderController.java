@@ -116,7 +116,7 @@ public class OrderController {
         echartsList.add(2,new EchartsData("早餐",0));
         echartsList.add(3,new EchartsData("烧烤",0));
         echartsList.add(4,new EchartsData("小炒",0));
-        //2.检查是否存在订单
+        //检查是否存在订单
         List<Orders> ordersList=orderService.getOrderIdByUid(userid);
         if(ordersList==null){
             return Response.makeOKRsp(echartsList);
